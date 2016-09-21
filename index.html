@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Typography Baseline</title>
+	<link rel="stylesheet" href="src/baseline.css">
+</head>
+<body>
+<section>
+  <h1>Semantics and Typography</h1>
+  <h2>An Introduction </h2>
+  <p>This little baseline has ( almost) all of the content flow and phrasing elements. It attempts to use all of those elements according to their defined semantics. It also tries to provide a baseline style for those elements. So this isn't a normalize
+    or a reset, but maybe the first set of styles you'd add before you start branding stuff. Here is the <a href="https://www.w3.org/TR/html5/">full list of the elements</a>.
+  </p>
+</section>
+<section>
+  <h1>Here is a collection of headings </h1>
+  <h2>The subheading that should tell you more about it</h2>
+  <h3>The heading that (probably) explains sections of content</h3>
+  <h4>The First unimportant heading</h4>
+  <h5>The Second Unimportant heading</h5>
+  <h6>The Heading for pedants</h6>
+</section>
+<hr />
+<section>
+  <h3>Paragraphs and Styles</h3>
+  <h4>Text Level Semantics</h4>
+  <p>I'm that paragraph with some <em>emphasis on the text-level semantics</em> where I might feel the need to <strong>share some strong opinions</strong>. This paragraph even uses elements that should have been deprecated, but instead the W3C redefined
+    them. And that's dumb, because formerly presentational elements now do silly things like call a thing to your <b>attention</b> for no good reason, or tell you that something is <u>mispelled</u>, or the name of a boat &mdash; which makes as much
+    sense as building another <i>Titanic</i>. It makes no sense, but &hellip; <i>c'est la vie</i>. </p>
+
+  <h4>Editing semantics</h4>
+  <p>This paragraph is all about editing my opinions. Sometimes I have opinions <s> that are no longer relevant</s>. Sometimes I <mark>mark or highlight</mark> some text so that people notice it. <ins>Sometimes I insert some thoughts later</ins>. Sometimes
+    I <del>delete those thoughts</del>. The user can also select text, so it's important to be sure that the user can discern whether I've highlighted something, or they have. </p>
+
+  <h4>Definitions</h4>
+  <p> The whole point of this paragraph is meaning. Sometimes we need an explanation, or a <dfn title="Definition">definition </dfn>. For those times, you have an element that you can use to tell the user that one word in this paragraph is the term that the
+    paragraph is actually explaining. </p>
+
+  <p>Sometimes, we have to define an abbreviation. Take, <dfn><abbr title="Light Amplification by Stimulated Emition of Radiation">LASER</abbr></dfn>, which is an acronym for Light Amplification by Stimulated Emition of Radiation. The abbreviation tags don't
+    make much sense unless they have a title, though. </p>
+
+  <p> You know what time it is? No, not Howdy-Doody time. It's <time>April 29, 2016</time>.
+
+  </p>
+
+  <hr />
+  <h3>Quoting, Citing, scripting</h3>
+  <p>You know how you're saying something, and then you just feel the need to make quick quote, like <q>Hey, I totally want to buy Somnaderpaphil LG for my herpes</q>? But after some reading,you see that small print that says <small>  it can give 1 out of 2 users irritable bowel syndrome</small>.
+    Then you read all of scientific things <sub>(1/0)</sub> or citations <sup>1</sup> that make you feel better. </p>
+
+  <blockquote>Go, Blockquote. Quote away. Be the blockquote you've always wanted to be. But within reason. Also, don't forget who made you...
+    <cite>The Dude who spoke you into existence</cite>
+  </blockquote>
+
+  <hr />
+  <h3>Code Semantics</h3>
+  <p> Writing code is hard. You have stuff like variables. Imagine <var> n</var> is a variable. <wbr /> Maybe you have some code, like <code> n = 1</code>. Now you want to increment it with your <kbd>+</kbd> on the keyboard, so the result is a sample (e.g.<samp>n == 2</samp>    ). And maybe there's <data value="one,two,three">data</data>, where maybe the browser needs an internal value, but the user needs to see something friendly.
+  </p>
+
+  <pre>
+&lt;p&gt; Writing code is hard. You have stuff like variables. Imagine where &lt;var&gt; n&lt;/var&gt; is a variable.<wbr /> &lt;br /&gt; Maybe you have some code, like &lt;code&gt; n = 1&lt;/code&gt;. Now you want to increment <wbr />it with your &lt;kbd&gt;+&lt;/kbd&gt; on the keyboard, so the result is a sample (e.g.&lt;samp&gt; n == 2&lt;/samp&gt;).
+&lt;/p&gt;
+</pre>
+  <hr />
+  <h3>List semantics </h3>
+  <ol>
+    <li>The first item in an ordered list</li>
+    <li>The second item in an ordered list</li>
+  </ol>
+  <ul>
+    <li>I am a humble list item, I don't care if I'm first</li>
+    <li>I am a second humble list item, put me wherever yo!</li>
+  </ul>
+
+  <dl>
+    <dt>ordered list</dt>
+    <dd>a list with numbers, where the items need to be in a particular order </dd>
+    <dt>unordered list</dt>
+    <dd>a list with bullets or some other indicator, where the items can be in any order</dd>
+    <dt>definition list</dt>
+    <dd>The forgotten list. It has definition terms,<code>&lt;dt&gt;</code> and definitions <code>&lt;dd&gt;</code>. It's pretty much perfect for listing out the kinds of lists in a subtle, 4th wall-breaking kind of way. </dd>
+
+  </dl>
+  <hr />
+  <h3>Language Semantics</h3>
+  <p>Then there's that text where you need to show it in a different language. Like, say you want to know my name, but you speak Korean better than English. Well, I'd tell you my name is <ruby lang="en" >Frank <rt lang="ko">퍼랜케</rt></ruby> and I hope you'd know how to pronounce it. </p>
+
+  <p>Sometimes, though, you need to show something in a semitic language. Maybe you want to say <ruby>Shalom <rt lang="iw"><bdi> שלום</bdi></rt></ruby><ruby> in the home<rt lang="iw"><bdi>בבית</bdi></rt></ruby>.That's totally fine, just remember that text runs in the opposite direction in Arabic, Farsi, and Hebrew. </p>
+
+  <p>With Semitic Languages, though, you need to flip the order of some things. Say you're reading some text like, <bdi>אני אוהב את יין</bdi> and it translates as <samp><bdo dir="rtl"><bdi>I</bdi> <bdi>like</bdi> <bdi>wine</bdi></bdo></samp>. You have to remember that there's an element for saying a block of text is written in reverse, and another for saying a span of text should be the reverse of its parent. </p>
+
+  <p>Another way to understand that text is to look at the word-for-word translation: <ruby><rbc><rb>Shalom</rb><rb> in the home</rb></rbc><rtc lang="iw"><rt><bdi>שלום</bdi></rt><rt><bdi>בבית</bdi></rt></rtc></ruby></p>
+
+  <hr />
+  <address>
+  <h4>Who should you contact about this?</h4>
+  <p><a href="http://twitter.com/paceaux">Paceaux</a>
+  </p>
+</address>
+</section>
+</body>
+</html>

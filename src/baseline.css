@@ -1,0 +1,438 @@
+/*
+Comment-A: rem for left-right, for consistent alignment.
+   em for top/bottom, so the spacing is relative to font-size
+Comment-B: Color is a dark, dark gray rgb (55, 55, 55).
+    All grays and base line styles are multiples of this
+Comment-C:
+  #373737 -> base:      ->   rgb(55,55,55);
+  #6e6e6e -> base * 2   ->   rgb(110,110,110)
+  #a5a5a5 -> base * 3   ->   rgb(165,165,165)
+  #c1c1c1 -> base * 3.5 ->   rgb(192.5,192.5,192.5)
+  #dcdcdc -> base * 4   ->   rgb(220,220,220)
+Comment-D:
+  Set the font-size w/ calc and use rem. This way, the font-size can scale up as the browser window gets larger, but it also doesn't get ridiculously hard to read when the browser window shrinks
+Comment-E:
+  increases margin as screen width gets smaller
+*/
+
+html {
+  color: #373737;
+  /*Comment-B*/
+  font-size: calc(.5vw + 1rem);
+  /*Comment-D*/
+  line-height: 1.168;
+}
+
+
+/*=====
+  #Everything
+=====*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+pre {
+  line-height: 1.618;
+  margin: 0 .618rem 0 .618rem;
+  /* Comment-A */
+}
+
+
+/*=====
+  #Headings
+=====*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: calc(1.618vmin - 1vmax + .35em);
+  /*Comment-E*/
+}
+
+h1 {
+  font-size: 2.617924em;
+  /* (16 x 1.618) x 1.618 */
+}
+
+h2 {
+  font-size: 1.618em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+h6 {
+  font-size: 1.1em;
+}
+
+
+/*=====
+  #Lists
+=====*/
+
+ul,
+ol,
+dl {
+  padding: .618em .618rem;
+  /* Comment-A */
+}
+
+li {
+  text-indent: -.9em;
+  line-height: 1.618;
+  padding: 0;
+  margin: 0 0 0 .618rem;
+}
+
+li {
+  list-style-position: inside;
+}
+
+dt {
+  text-indent: -.618rem;
+}
+
+dd {
+  margin: 0;
+  padding: 0 .618rem 0 .618rem;
+}
+
+
+/*=====
+  #Paragraphs #Blocks
+=====*/
+
+hr {
+  color: #a5a5a5;
+  border-width: .0625em;
+  border-style: solid;
+  margin: 1.618em .618rem;
+}
+
+p,
+blockquote {
+  line-height: 1.618
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: .618em;
+}
+
+
+/*Credit where it's due:
+https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+*/
+
+blockquote {
+  background: rgba(165, 165, 165, .15);
+  border-left: 10px solid #dcdcdc;
+  /*Comment-C*/
+  margin: 1.618em .618rem;
+  /* Comment-A */
+  padding: 0.618em .618rem;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote::before {
+  color: #c1c1c1;
+  /*Comment-C*/
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+
+/*=====
+  #Content-Flow
+=====*/
+
+em,
+i,
+cite {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+cite {
+  display: block;
+  text-align: right;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 1px dotted red;
+}
+
+small,
+sub,
+sup {
+  font-size: .618em;
+  line-height: 1;
+}
+
+sub {
+  vertical-align: bottom;
+}
+
+sup {
+  vertical-align: top;
+}
+
+
+/*=====
+  #content-flow #editorial
+=====*/
+
+s,
+strike,
+del,
+ins {
+  color: #6e6e6e;
+  /*Comment-C*/
+}
+
+s,
+strike,
+del {
+  text-decoration: strikethrough;
+}
+
+ins,
+del {
+  background-color: rgba(220, 220, 220, .25);
+}
+
+ins {
+  text-decoration: none;
+}
+
+
+/*
+mark and selection should be different, so user knows which one they've selected.
+
+mark and selections:
+  saturation: 44%
+  lightness: 75%
+Hue is different
+*/
+
+mark {
+  background-color: rgba(165, 220, 165, .9);
+}
+
+::selection {
+  background-color: rgba(165, 220, 220, .9);
+}
+
+
+/*because mark and selection have same saturation, brightenss, mark won't easily stand out if it's selected*/
+
+mark::selection {
+  background-color: rgba(165, 220, 110, .9);
+}
+
+
+/*dfn and dt both do the same thing: denote a term to be defined */
+
+dfn,
+dt {
+  font-style: oblique;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+
+/*=====
+#Content-flow #Code
+=====*/
+
+pre,
+code,
+var,
+samp,
+data {
+  font-family: monospace;
+}
+
+kbd,
+samp,
+data {
+  background-color: rgba(165, 165, 165, .2);
+}
+
+kbd {
+  font-size: .75em;
+  padding: .25ex .5ex;
+  border: 1px solid #c1c1c1;
+  border-radius: 3px;
+}
+
+
+/*Treat samp like a mini blockquote. because basically you're quoting what the computer would do*/
+
+samp,
+data {
+  padding: 0 10px;
+}
+
+var,
+data {
+  font-style: italic;
+}
+
+samp {
+  border-left: 5px solid #c1c1c1;
+}
+
+data {
+  padding: 0 10px;
+}
+
+pre {
+  font-size: .75em;
+  line-height: 1.2;
+  padding: .618em .618rem;
+  border: 1px solid #c1c1c1;
+  border-radius: 2px;
+  overflow: scroll;
+}
+
+/*=====
+  #Ruby
+=====*/
+
+ruby {
+  display: ruby;
+  position: relative;
+  margin:0 .5ex;
+  -webkit-ruby-position: before;
+  ruby-position: over;
+  ruby-position: before;
+}
+
+rtc, rbc {
+  font-size: inherit;
+  line-height: 1;
+  ruby-align: start;
+}
+
+rt {
+  display: ruby-text;
+  font-size: .7em;
+}
+
+rt + rt {
+  margin-left: .5ex;
+}
+
+rtc > bdo {
+  display: -webkit-ruby-text-container;
+  display: ruby-base-container;
+}
+
+/*complex ruby for chrome and Edge*/
+/*only FF has "complete" ruby support*/
+@supports (ruby-align: left) or ( not (display:ruby-base-container))  {
+
+  ruby {
+    display:inline-flex;
+    flex-direction: column;
+    vertical-align: 1em;
+    line-height: 1;
+  }
+
+  rtc, rt {
+    order: -1;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  rtc {
+    display: inline-flex;
+  }
+}
+/*Edge fixes*/
+@supports  ((ruby-align: left)) {
+
+  rtc {
+    justify-content: space-between;
+  }
+
+  rt {
+    display: inline-flex;
+  }
+}
+
+
+/*=====
+#Links
+=====*/
+
+
+/*
+rgb (110,165,220)
+hsl(210, 61%, 65%)
+#6ea5dc
+
+:hover
+ rgb(110,165,193)
+ hsl (200,40%,59%)
+ #6ea5c1
+*/
+
+a {
+  color: #6ea5dc;
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: all .3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: #6ea5c1;
+  border-color: #6ea5c1;
+  outline: none;
+}
+
+a:active {
+  border-style: solid;
+}
+
+
+/*==========
+not part of the baseline
+==========*/
+
+body {
+  width: 67vw;
+  margin: 0 auto;
+}
