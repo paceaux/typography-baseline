@@ -200,11 +200,11 @@ sup {
 }
 
 sub {
-  vertical-align: bottom;
+  vertical-align: -.6ex;
 }
 
 sup {
-  vertical-align: top;
+  vertical-align: .6ex;
 }
 
 
