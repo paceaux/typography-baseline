@@ -12,4 +12,7 @@ Anything and everything. It's a baseline. But if you want to know what to change
 ## What about the HTML file?
 The HTML file is an attempt to use all of the inline, content-flow, and otherwise odd/obscure semantic elements appropriately. Semantics are hard.
 
+## Can I see it in action?
+Just in case you can't clone/fork the repo, there is a live version over on CodePen: http://codepen.io/paceaux/pen/grKWWe
+
 
