@@ -487,12 +487,3 @@ tfoot tr:first-child th,
 thead tr:last-child td {
   border-top-width: 2px;
 }
-
-/*==========
-not part of the baseline
-==========*/
-
-body {
-  width: 67vw;
-  margin: 0 auto;
-}
