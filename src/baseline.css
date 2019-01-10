@@ -1,10 +1,6 @@
 /*
 Comment-A: rem for left-right, for consistent alignment.
    em for top/bottom, so the spacing is relative to font-size
-Comment-B: Color is a dark, dark gray rgb (55, 55, 55).
-    All grays and base line styles are multiples of this
-Comment-C:
-  Using a "base value", all colors are a multiple of 55
 
 Comment-D:
   Set the font-size w/ calc and use rem. This way, the font-size can scale up as the browser window gets larger, but it also doesn't get ridiculously hard to read when the browser window shrinks
@@ -12,6 +8,11 @@ Comment-E:
   increases margin as screen width gets smaller
 */
 :root {
+    /* Color Palette
+        Variables follow convention found here: https://codepen.io/paceaux/pen/XdxQza
+        Color is a dark, dark gray rgb (55, 55, 55). All grays and base line styles are multiples of this
+        Using a "base value", all colors are a multiple of 55
+    */
     --neutralColor: rgb(55,55,55);                              /*base:           #373737;    hsl(22%, 22%, 22%) */
     --neutralColor2x: rgb(110,110,110);                   /*  base * 2:  #6e6e6e;      hsl(0, 0%, 43%) */
     --neutralcolor3x: rgb(165,165,165);                  /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
@@ -19,13 +20,21 @@ Comment-E:
     --neutralColor4x: rgb(220,220,220);               /*  base * 4:    #dcdcdc;       hsl(0, 0%, 86%) */
     --coolColor: rgb(110,165,220);                               /*   #6ea5dc; hsl(210, 61%, 65%);  */
     --coolDarkerColor: rgb(110,165,193);              /* #6ea5c1;  hsl (200,40%,59%) */
+
+    /*  Colors
+        Variables follow convention found here: https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming
+    */
     --baseTextColor: var(--neutralColor);
     --baseEditorialTextColor: var(--neutralColor2x);
     --baseLinkColor: var(--coolColor);
     --baseLinkColorHover: var(--coolDarkerColor);
     --baseInlineBorderColor: var(--neutralcolor3-5x);
+
+    /*Line Heights*/
     --baseLineHeight: 1.618;
     --smallLineHeight: 1.2;
+
+    /*text (body copy)*/
     --biggestTextSize:  1.3em;
     --biggerTextSize: 1.2em;
     --bigTextSize: 1.1em;
@@ -37,7 +46,6 @@ Comment-E:
 html {
     color: #373737; 
     color: var(--baseTextColor);
-  /*Comment-B*/
   font-size: calc(.5vw + 1rem);
   /*Comment-D*/
   line-height: 1.168;
@@ -180,7 +188,6 @@ blockquote {
   background: rgba(165, 165, 165, .15);
   border-left: 10px solid#dcdcdc;
   border-left: 10px solid var(--neutralColor4x);
-  /*Comment-C*/
   margin: 1.618em .618rem;
   /* Comment-A */
   padding: 0.618em .618rem;
@@ -190,7 +197,6 @@ blockquote {
 blockquote::before {
   color: #c1c1c1;
   color: var(--neutralcolor3-5x);
-  /*Comment-C*/
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -251,7 +257,6 @@ del,
 ins {
   color: #6e6e6e;
   color: var(--baseEditorialTextColor);
-  /*Comment-C*/
 }
 
 s,
