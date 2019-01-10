@@ -1,18 +1,29 @@
 # Typography Baseline
 
+Base typographical styles for all your  HTML elements.
+
 ## I have a normalize/reset, why do I need this?
-This isn't meant to replace a normalize or a reset. Keep using your normalize and reset.
+This isn't meant to replace a normalize or a reset. Keep using that! This makes sure that even obscure elements (like `<del>` or `<samp>`) look like something nice.
 
-## When do I use this?
-After you've put your normalize/ reset in place, and when you're looking for a starting place for your brand. This attempts to provide some sort of baseline style for all of the typographical elements.
+## Where does this fit in my CSS architecture?
+This would come after a reset / normalize and before you set baseline styles for forms tables. And definitely before you write a single ruleset with a class. If you're a fan of [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/), this is in the Elements layer.
 
-## what can I change?
-Anything and everything. It's a baseline. But if you want to know what to change first, start with the `font-size` for `html` and then move on to colors.
+## What should I change?
+Anything and everything. It's a baseline. This thing's job is to make sure everything looks like something.
+Look at the `:root` ruleset for some ideas. Most of the baseline has been consolidated into [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables).
 
-## What about the HTML file?
+## What's up with that HTML file?
 The HTML file is an attempt to use all of the inline, content-flow, and otherwise odd/obscure semantic elements appropriately. Semantics are hard.
 
 ## Can I see it in action?
-Just in case you can't clone/fork the repo, there is a live version over on CodePen: http://codepen.io/paceaux/pen/grKWWe
+There is a live version over on CodePen: http://codepen.io/paceaux/pen/grKWWe
+
+## Any other details I should know?
+YES!
+
+CSS Variable names follow a convention established [here](https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming).
+
+There's a more robust example of a color palette [here](https://codepen.io/paceaux/pen/XdxQza).
+
 
 
