@@ -39,12 +39,13 @@ Comment-E:
     --biggerTextSize: 1.2em;
     --bigTextSize: 1.1em;
     --baseTextSize: 1em;
+    --smallTextSize: .8em;
     --smallerTextSize: .75em;
     --smallestTextSize: .618em;
 
     /*text (titles)
             The small title sizes use the big text sizes; so they overlap
-            They're here, though, so that, if desired, we can deviate and not have them overlap 
+            They're here, though, so that, if desired, we can deviate and not have them overlap
     */
     --biggestTitleSize: 2.617924em; /* (16 x 1.618) x 1.618 */
     --bigTitleSize: 1.618em;
@@ -476,6 +477,7 @@ a:active {
 
 table {
   font-size: .8em;
+  font-size:  var(--smallTextSize);
 }
 
 caption {
