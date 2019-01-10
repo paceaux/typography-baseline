@@ -17,13 +17,15 @@ Comment-E:
     --neutralcolor3x: rgb(165,165,165);                  /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
     --neutralcolor3-5x: rgb(192.5,192.5,192.5);   /*base * 3.5: #c1c1c1;      hsl(0, 0%, 75%) */
     --neutralColor4x: rgb(220,220,220);               /*  base * 4:    #dcdcdc;       hsl(0, 0%, 86%) */
-    --coolColor: rgb (110,165,220);                               /*   #6ea5dc; hsl(210, 61%, 65%);  */
+    --coolColor: rgb(110,165,220);                               /*   #6ea5dc; hsl(210, 61%, 65%);  */
     --coolDarkerColor: rgb(110,165,193);              /* #6ea5c1;  hsl (200,40%,59%) */
     --baseTextColor: var(--neutralColor);
     --baseEditorialTextColor: var(--neutralColor2x);
     --baseLinkColor: var(--coolColor);
     --baseLinkColorHover: var(--coolDarkerColor);
     --baseInlineBorderColor: var(--neutralcolor3-5x);
+    --baseLineHeight: 1.618;
+    --smallLineHeight: 1.2;
 }
 
 html {
@@ -33,6 +35,7 @@ html {
   font-size: calc(.5vw + 1rem);
   /*Comment-D*/
   line-height: 1.168;
+  line-height: var(--baseLineHeight);
 }
 
 
@@ -52,6 +55,7 @@ ol,
 dl,
 pre {
   line-height: 1.618;
+  line-height: var(--baseLineHeight);
   margin: 0 .618rem 0 .618rem;
   /* Comment-A */
 }
@@ -70,6 +74,7 @@ h6 {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
   line-height: 1.2;
+  line-height: var(--smallLineHeight);
   margin-bottom: calc(1.618vmin - 1vmax + .35em);
   /*Comment-E*/
 }
@@ -114,6 +119,7 @@ dl {
 li {
   text-indent: -.9em;
   line-height: 1.618;
+  line-height: var(--baseLineHeight);
   padding: 0;
   margin: 0 0 0 .618rem;
 }
@@ -146,7 +152,8 @@ hr {
 
 p,
 blockquote {
-  line-height: 1.618
+  line-height: 1.618;
+  line-height: var(--baseLineHeight);
 }
 
 p {
@@ -338,6 +345,7 @@ data {
 pre {
   font-size: .75em;
   line-height: 1.2;
+  line-height: var(--smallLineHeight);
   padding: .618em .618rem;
   border: 1px solid #c1c1c1;
   border: 1px solid var(--baseInlineBorderColor);
@@ -467,6 +475,7 @@ th, td {
   text-align: left;
   vertical-align: middle;
   line-height: 1.2;
+  line-height: var(--smallLineHeight);
   padding: .4em .618rem;
 }
 
