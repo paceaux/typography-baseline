@@ -41,6 +41,17 @@ Comment-E:
     --baseTextSize: 1em;
     --smallerTextSize: .75em;
     --smallestTextSize: .618em;
+
+    /*text (titles)
+            The small title sizes use the big text sizes; so they overlap
+            They're here, though, so that, if desired, we can deviate and not have them overlap 
+    */
+    --biggestTitleSize: 2.617924em; /* (16 x 1.618) x 1.618 */
+    --bigTitleSize: 1.618em;
+    --baseTitleSize: 1.5em;
+    --smallTitleSize: var(--biggestTextSize);
+    --smallerTitleSize: var(--biggerTextSize);
+    --smallestTitleSize: var(--bigTextSize);
 }
 
 html {
@@ -95,30 +106,32 @@ h6 {
 
 h1 {
   font-size: 2.617924em;
-  /* (16 x 1.618) x 1.618 */
+  font-size: var(--biggestTitleSize);
 }
 
 h2 {
   font-size: 1.618em;
+  font-size: var(--bigTitleSize);
 }
 
 h3 {
   font-size: 1.5em;
+  font-size: var(--baseTitleSize);
 }
 
 h4 {
   font-size: 1.3em;
-  font-size: var(--biggestTextSize);
+  font-size: var(--smallTitleSize);
 }
 
 h5 {
   font-size: 1.2em;
-  font-size: var(--biggerTextSize);
+  font-size: var(--smallerTitleSize);
 }
 
 h6 {
   font-size: 1.1em;
-  font-size: var(--bigTextSize);
+  font-size: var(--smallestTitleSize);
 }
 
 
@@ -507,5 +520,6 @@ th {
 
 thead th,
 tfoot th {
-  font-size: 1.5em; /*treat th in header/footer as h3*/ 
+  font-size: 1.5em; /*treat th in header/footer as h3*/
+  font-size: var(--baseTitleSize); /*treat th in header/footer as h3*/
 }
