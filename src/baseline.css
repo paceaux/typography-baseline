@@ -57,8 +57,7 @@ Comment-E:
 html {
     color: #373737; 
     color: var(--baseTextColor);
-  font-size: calc(.5vw + 1rem);
-  /*Comment-D*/
+  font-size: calc(.5vw + 1rem); /*Comment-D*/
   line-height: 1.168;
   line-height: var(--baseLineHeight);
 }
@@ -81,8 +80,7 @@ dl,
 pre {
   line-height: 1.618;
   line-height: var(--baseLineHeight);
-  margin: 0 .618rem 0 .618rem;
-  /* Comment-A */
+  margin: 0 .618rem 0 .618rem; /* Comment-A */
 }
 
 
@@ -100,8 +98,7 @@ h6 {
   font-weight: bold;
   line-height: 1.2;
   line-height: var(--smallLineHeight);
-  margin-bottom: calc(1.618vmin - 1vmax + .35em);
-  /*Comment-E*/
+  margin-bottom: calc(1.618vmin - 1vmax + .35em); /*Comment-E*/
 }
 
 h1 {
@@ -142,8 +139,7 @@ h6 {
 ul,
 ol,
 dl {
-  padding: .618em .618rem;
-  /* Comment-A */
+  padding: .618em .618rem; /* Comment-A */
 }
 
 li {
@@ -201,8 +197,7 @@ blockquote {
   background: rgba(165, 165, 165, .15);
   border-left: 10px solid#dcdcdc;
   border-left: 10px solid var(--colorNeutralLighter);
-  margin: 1.618em .618rem;
-  /* Comment-A */
+  margin: 1.618em .618rem; /* Comment-A */
   padding: 0.618em .618rem;
   quotes: "\201C""\201D""\2018""\2019";
 }
@@ -350,7 +345,6 @@ kbd {
   border-radius: 3px;
 }
 
-
 /*Treat samp like a mini blockquote. because basically you're quoting what the computer would do*/
 
 samp,
@@ -455,18 +449,6 @@ rtc > bdo {
 #Links
 =====*/
 
-
-/*
-rgb (110,165,220)
-hsl(210, 61%, 65%)
-#6ea5dc
-
-:hover
- rgb(110,165,193)
- hsl (200,40%,59%)
- #6ea5c1
-*/
-
 a {
   color: #6ea5dc;
   color: var(--baseLinkColor);
@@ -514,12 +496,12 @@ th, td {
 th {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 1.3em; /*treat th in a body as h4*/
-  font-size: var(--biggestTextSize); /*treat th in a body as h4*/
+  font-size: 1.3em;
+  font-size: var(--smallTitleSize); /*treat th in a body as h4*/
 }
 
 thead th,
 tfoot th {
-  font-size: 1.5em; /*treat th in header/footer as h3*/
+  font-size: 1.5em;
   font-size: var(--baseTitleSize); /*treat th in header/footer as h3*/
 }
