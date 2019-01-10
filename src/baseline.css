@@ -4,16 +4,26 @@ Comment-A: rem for left-right, for consistent alignment.
 Comment-B: Color is a dark, dark gray rgb (55, 55, 55).
     All grays and base line styles are multiples of this
 Comment-C:
-  #373737 -> base:      ->   rgb(55,55,55);
-  #6e6e6e -> base * 2   ->   rgb(110,110,110)
-  #a5a5a5 -> base * 3   ->   rgb(165,165,165)
-  #c1c1c1 -> base * 3.5 ->   rgb(192.5,192.5,192.5)
-  #dcdcdc -> base * 4   ->   rgb(220,220,220)
+  Using a "base value", all colors are a multiple of 55
+
 Comment-D:
   Set the font-size w/ calc and use rem. This way, the font-size can scale up as the browser window gets larger, but it also doesn't get ridiculously hard to read when the browser window shrinks
 Comment-E:
   increases margin as screen width gets smaller
 */
+:root {
+    --neutralColor: rgb(55,55,55);                              /*base:           #373737;    hsl(22%, 22%, 22%) */
+    --neutralColor2x: rgb(110,110,110);                   /*  base * 2:  #6e6e6e;      hsl(0, 0%, 43%) */
+    --neutralcolor3x: rgb(165,165,165);                  /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
+    --neutralcolor3-5x: rgb(192.5,192.5,192.5);   /*base * 3.5: #c1c1c1;      hsl(0, 0%, 75%) */
+    --neutralColor4x: rgb(220,220,220);               /*  base * 4:    #dcdcdc;       hsl(0, 0%, 86%) */
+    --coolColor: rgb (110,165,220);                               /*   #6ea5dc; hsl(210, 61%, 65%);  */
+    --coolDarkerColor: rgb(110,165,193);              /* #6ea5c1;  hsl (200,40%,59%) */
+    --baseTextColor: var(--neutralColor);
+    --baseEditorialTextColor: var(--neutralColor2x);
+    --baseLinkColor: var(--coolColor);
+    --baseLinkColorHover: var(--coolDarkerColor)
+}
 
 html {
   color: #373737;
