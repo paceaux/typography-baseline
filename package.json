@@ -1,0 +1,21 @@
+{
+  "name": "typography-baseline.css",
+  "version": "1.0.0",
+  "description": "Baseline styles for all of the typographical elements in HTML",
+  "main": "src/baseline.css",
+  "style": "src/baseline.css",
+  "files": [
+    "LICENSE.md",
+    "src/baseline.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paceaux/typography-baseline.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paceaux/typography-baseline/issues"
+  },
+  "homepage": "https://github.com/paceaux/typography-baseline#readme",
+  "author": "Frank M. Taylor"
+}
