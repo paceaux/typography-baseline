@@ -1,11 +1,6 @@
 /*
-Comment-A: rem for left-right, for consistent alignment.
-   em for top/bottom, so the spacing is relative to font-size
-
-Comment-D:
-  Set the font-size w/ calc and use rem. This way, the font-size can scale up as the browser window gets larger, but it also doesn't get ridiculously hard to read when the browser window shrinks
-Comment-E:
-  increases margin as screen width gets smaller
+    Comment-A: rem for left-right, for consistent alignment.
+        em for top/bottom, so the spacing is relative to font-size  
 */
 :root {
     /* Color Palette
@@ -13,13 +8,13 @@ Comment-E:
         Color is a dark, dark gray rgb (55, 55, 55). All grays and base line styles are multiples of this
         Using a "base value", all colors are a multiple of 55
     */
-    --colorNeutralDarker: rgb(55,55,55);                              /*base:           #373737;    hsl(22%, 22%, 22%) */
+    --colorNeutralDarker: rgb(55,55,55);                    /*base:           #373737;    hsl(22%, 22%, 22%) */
     --colorNeutralDark: rgb(110,110,110);                   /*  base * 2:  #6e6e6e;      hsl(0, 0%, 43%) */
-    --colorNeutral: rgb(165,165,165);                  /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
-    --colorNeutralLight: rgb(192.5,192.5,192.5);   /*base * 3.5: #c1c1c1;      hsl(0, 0%, 75%) */
-    --colorNeutralLighter: rgb(220,220,220);               /*  base * 4:    #dcdcdc;       hsl(0, 0%, 86%) */
-    --colorCool: rgb(110,165,220);                               /*   #6ea5dc; hsl(210, 61%, 65%);  */
-    --colorCoolDarker: rgb(110,165,193);              /* #6ea5c1;  hsl (200,40%,59%) */
+    --colorNeutral: rgb(165,165,165);                       /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
+    --colorNeutralLight: rgb(192.5,192.5,192.5);            /*base * 3.5: #c1c1c1;      hsl(0, 0%, 75%) */
+    --colorNeutralLighter: rgb(220,220,220);                /*  base * 4:    #dcdcdc;       hsl(0, 0%, 86%) */
+    --colorCool: rgb(110,165,220);                          /*   #6ea5dc; hsl(210, 61%, 65%);  */
+    --colorCoolDarker: rgb(110,165,193);                    /* #6ea5c1;  hsl (200,40%,59%) */
 
     /*  Colors
         Variables follow convention found here: https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming
@@ -58,7 +53,7 @@ Comment-E:
 html {
     color: #373737; 
     color: var(--baseTextColor);
-    font-size: calc(.5vw + 1rem); /*Comment-D*/
+    font-size: calc(.5vw + 1rem); /*the font-size can scale up as the browser window gets larger, but doesn't get hard to read when the browser window shrinks*/
     line-height: 1.168;
     line-height: var(--baseLineHeight);
 }
@@ -99,7 +94,7 @@ h6 {
     font-weight: bold;
     line-height: 1.2;
     line-height: var(--smallLineHeight);
-    margin-bottom: calc(1.618vmin - 1vmax + .35em); /*Comment-E*/
+    margin-bottom: calc(1.618vmin - 1vmax + .35em); /* increases margin as screen width gets smaller */
 }
 
 h1 {
