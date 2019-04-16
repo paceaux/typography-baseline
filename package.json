@@ -1,7 +1,7 @@
 {
   "name": "typography-baseline.css",
   "version": "1.0.0",
-  "description": "Baseline styles for all of the typographical elements in HTML",
+  "description": "A good start to your CSS typography that covers all the semantic nooks and crannies",
   "main": "src/baseline.css",
   "style": "src/baseline.css",
   "files": [
@@ -12,6 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/paceaux/typography-baseline.git"
   },
+  "keywords": [
+    "CSS",
+    "Typography"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/paceaux/typography-baseline/issues"
