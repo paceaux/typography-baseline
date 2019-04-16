@@ -2,6 +2,8 @@
 
 Base typographical styles for all your  HTML elements.
 
+[![License][license-image]][license-url] [![Downloads][downloads-image]][downloads-url]
+
 ## I have a normalize/reset, why do I need this?
 This isn't meant to replace a normalize or a reset. Keep using that! This makes sure that even obscure elements (like `<del>` or `<samp>`) look like something nice.
 
@@ -25,5 +27,8 @@ CSS Variable names follow a convention established [here](https://gist.github.co
 
 There's a more robust example of a color palette [here](https://codepen.io/paceaux/pen/XdxQza).
 
-
+[license-image]: http://img.shields.io/npm/l/typography-baseline.css.svg
+[license-url]: LICENSE
+[downloads-image]: http://img.shields.io/npm/dm/typography-baseline.css.svg
+[downloads-url]: http://npm-stat.com/charts.html?package=typography-baseline.css
 
