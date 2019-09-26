@@ -48,11 +48,21 @@
     --smallTitleSize: var(--biggestTextSize);
     --smallerTitleSize: var(--biggerTextSize);
     --smallestTitleSize: var(--bigTextSize);
+
+    /* font families
+            base is meant to be what's applied to the majority of body copy
+            title could also be called "headline", but would be  w/ other vars
+    */
+    --baseFontFamily: Georgia, 'Times New Roman', serif;
+    --titleFontFamily: Helvetica, Arial, sans-serif;
+    --codeFontFamily: monospace;
 }
 
 html {
     color: #373737; 
     color: var(--baseTextColor);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--baseFontFamily);
     font-size: calc(.5vw + 1rem); /*the font-size can scale up as the browser window gets larger, but doesn't get hard to read when the browser window shrinks*/
     line-height: 1.168;
     line-height: var(--baseLineHeight);
@@ -91,6 +101,7 @@ h4,
 h5,
 h6 {
     font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--titleFontFamily);
     font-weight: bold;
     line-height: 1.2;
     line-height: var(--smallLineHeight);
@@ -319,6 +330,7 @@ var,
 samp,
 data {
     font-family: monospace;
+    font-family: var(--codeFontFamily);
 }
 
 kbd,
@@ -489,6 +501,7 @@ th, td {
 
 th {
     font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--titleFontFamily);
     font-weight: bold;
     font-size: 1.3em;
     font-size: var(--smallTitleSize); /*treat th in a body as h4*/
