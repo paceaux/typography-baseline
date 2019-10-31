@@ -1,13 +1,15 @@
 /*
-    Comment-A: rem for left-right, for consistent alignment.
-        em for top/bottom, so the spacing is relative to font-size  
+    Comment-A: 
+    rem for left-right, for consistent alignment.
+    em for top/bottom, so the spacing is relative to font-size  
 */
 :root {
-    /* Color Palette
-        Variables follow convention found here: https://codepen.io/paceaux/pen/XdxQza
-        Color is a dark, dark gray rgb (55, 55, 55). All grays and base line styles are multiples of this
-        Using a "base value", all colors are a multiple of 55
-    */
+/*===== 
+    #Color #Palette 
+    Variables follow convention found here: https://codepen.io/paceaux/pen/XdxQza
+    Color is a dark, dark gray rgb (55, 55, 55). All grays and base line styles are multiples of this
+    Using a "base value", all colors are a multiple of 55
+=====*/
     --colorNeutralDarker: rgb(55,55,55);                    /*base:           #373737;    hsl(22%, 22%, 22%) */
     --colorNeutralDark: rgb(110,110,110);                   /*  base * 2:  #6e6e6e;      hsl(0, 0%, 43%) */
     --colorNeutral: rgb(165,165,165);                       /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
@@ -16,20 +18,25 @@
     --colorCool: rgb(110,165,220);                          /*   #6ea5dc; hsl(210, 61%, 65%);  */
     --colorCoolDarker: rgb(110,165,193);                    /* #6ea5c1;  hsl (200,40%,59%) */
 
-    /*  Colors
-        Variables follow convention found here: https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming
-    */
+/*===== 
+    #Color #Link #Border 
+    Variables follow convention found here: https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming
+=====*/
     --baseTextColor: var(--colorNeutralDarker);
     --baseEditorialTextColor: var(--colorNeutralDark);
     --baseLinkColor: var(--colorCool);
     --baseLinkColorHover: var(--colorCoolDarker);
     --baseInlineBorderColor: var(--colorNeutralLight);
 
-    /*Line Heights*/
+/*===== 
+    #LineHeight 
+=====*/
     --baseLineHeight: 1.618;
     --smallLineHeight: 1.2;
 
-    /*text (body copy)*/
+/*===== 
+    #Body #Size #Paragraph #content-flow
+=====*/
     --biggestTextSize:  1.3em;
     --biggerTextSize: 1.2em;
     --bigTextSize: 1.1em;
@@ -38,10 +45,11 @@
     --smallerTextSize: .75em;
     --smallestTextSize: .618em;
 
-    /*text (titles)
-            The small title sizes use the big text sizes; so they overlap
-            They're here, though, so that, if desired, we can deviate and not have them overlap
-    */
+/*===== 
+    #Heading #Title #Size
+    The small title sizes use the big text sizes; so they overlap
+    They're here, though, so that, if desired, we can deviate and not have them overlap
+=====*/
     --biggestTitleSize: 2.617924em; /* (16 x 1.618) x 1.618 */
     --bigTitleSize: 1.618em;
     --baseTitleSize: 1.5em;
@@ -49,10 +57,11 @@
     --smallerTitleSize: var(--biggerTextSize);
     --smallestTitleSize: var(--bigTextSize);
 
-    /* font families
-            base is meant to be what's applied to the majority of body copy
-            title could also be called "headline", but would be  w/ other vars
-    */
+/*===== 
+    #Font #FontFamilies #Typeface #Code  #Heading #Paragraphs ===
+    base is meant to be what's applied to the majority of body copy
+    title could also be called "headline", but would be  w/ other vars
+=====*/
     --baseFontFamily: Georgia, 'Times New Roman', serif;
     --titleFontFamily: Helvetica, Arial, sans-serif;
     --codeFontFamily: monospace;
@@ -63,7 +72,7 @@ html {
     color: var(--baseTextColor);
     font-family: Georgia, 'Times New Roman', serif;
     font-family: var(--baseFontFamily);
-    font-size: calc(.5vw + 1rem); /*the font-size can scale up as the browser window gets larger, but doesn't get hard to read when the browser window shrinks*/
+    font-size: calc(.5vw + 1rem); /* the font-size can scale up as the browser window gets larger, but doesn't get hard to read when the browser window shrinks*/
     line-height: 1.168;
     line-height: var(--baseLineHeight);
 }
@@ -197,7 +206,7 @@ p {
 
 
 /* Credit where it's due:
-https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+    https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 */
 blockquote {
     background: rgba(165, 165, 165, .15);
@@ -262,7 +271,7 @@ sup {
 
 
 /*=====
-  #content-flow #editorial
+  #Content-Flow #editorial
 =====*/
 
 s,
@@ -306,12 +315,12 @@ mark {
     background-color: rgba(165, 220, 220, .9);
 }
 
-/*because mark and selection have same saturation, brightenss, mark won't easily stand out if it's selected*/
+/* Because mark and selection have same saturation, brightenss, mark won't easily stand out if it's selected */
 mark::selection {
     background-color: rgba(165, 220, 110, .9);
 }
 
-/*dfn and dt both do the same thing: denote a term to be defined */
+/* dfn and dt both do the same thing: denote a term to be defined */
 dfn,
 dt {
     font-style: oblique;
