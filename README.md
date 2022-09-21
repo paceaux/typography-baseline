@@ -33,11 +33,9 @@ This is a fairly unopinionated approach to making sure that the text has a decen
 * Firefox
 * Chrome
 * Edge
-* IE10*
 * Safari
 * Opera
 
- >*IE10 doesn't support CSS Variables, but nothing will break in IE10 if that's the case. 
 
 ## Usage
 While this is relatively unopinionated, there are a few "opinions" to consider:
