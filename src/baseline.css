@@ -168,7 +168,7 @@ li {
 }
 
 dt {
-    text-indent: -.618rem;
+    text-indent: calc(-1 * var(--baseSpacingHorizontal));
 }
 
 dd {
