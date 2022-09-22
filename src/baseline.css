@@ -58,6 +58,16 @@
     --smallestTitleSize: var(--bigTextSize);
 
 /*===== 
+    #Spacing #Text #Size
+=====*/
+    --bigSpacingHorizontal: 1.618rem;
+    --baseSpacingHorizontal: .618rem;
+
+    --bigSpacingVertical: 1.618em;
+    --baseSpacingVertical: .618em;
+
+
+/*===== 
     #Font #FontFamilies #Typeface #Code  #Heading #Paragraphs ===
     base is meant to be what's applied to the majority of body copy
     title could also be called "headline", but would be  w/ other vars
@@ -91,7 +101,7 @@ ol,
 dl,
 pre {
     line-height: var(--baseLineHeight);
-    margin: 0 .618rem 0 .618rem; /* Comment-A */
+    margin: 0 var(--baseSpacingHorizontal);
 }
 
 
@@ -143,14 +153,14 @@ h6 {
 ul,
 ol,
 dl {
-    padding: .618em .618rem; /* Comment-A */
+    padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
 }
 
 li {
     text-indent: -.9em;
     line-height: var(--baseLineHeight);
     padding: 0;
-    margin: 0 0 0 .618rem;
+    margin: 0 0 0 var(--baseSpacingHorizontal);
 }
 
 li {
@@ -163,7 +173,7 @@ dt {
 
 dd {
     margin: 0;
-    padding: 0 .618rem 0 .618rem;
+    padding: 0 var(--baseSpacingHorizontal);
 }
 
 
@@ -175,7 +185,7 @@ hr {
     color: var(--colorNeutral);
     border-width: .0625em;
     border-style: solid;
-    margin: 1.618em .618rem;
+    margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
 }
 
 p,
@@ -185,7 +195,7 @@ blockquote {
 
 p {
     font-size: var(--baseTextSize);
-    margin-bottom: .618em;
+    margin-bottom: var(--baseSpacingVertical);
 }
 
 
@@ -195,8 +205,8 @@ p {
 blockquote {
     background: rgba(165, 165, 165, .15);
     border-left: 10px solid var(--colorNeutralLighter);
-    margin: 1.618em .618rem; /* Comment-A */
-    padding: 0.618em .618rem;
+    margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
+    padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
     quotes: "\201C""\201D""\2018""\2019";
 }
 
@@ -356,7 +366,7 @@ data {
 pre {
     font-size: var(--smallerTextSize);
     line-height: var(--smallLineHeight);
-    padding: .618em .618rem;
+    padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
     border: 1px solid var(--baseInlineBorderColor);
     border-radius: 2px;
     overflow: scroll;
@@ -472,7 +482,7 @@ th, td {
     text-align: left;
     vertical-align: middle;
     line-height: var(--smallLineHeight);
-    padding: .4em .618rem;
+    padding: .4em var(--baseSpacingHorizontal);
 }
 
 th {
