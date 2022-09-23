@@ -75,6 +75,18 @@
     --baseFontFamily: Georgia, 'Times New Roman', serif;
     --titleFontFamily: Helvetica, Arial, sans-serif;
     --codeFontFamily: monospace;
+
+/*===== 
+    #Font #Weight
+    though font-weight ranges from 100 - 900, "normal" is 400 and the ends
+         are a difference of 300 .
+    So the "est" weights are the extremes, with room to add 
+        light, lighter, heavy, heavier. 
+    Recommend adding "ultra" if the weight is > 700
+=====*/
+    --lightestFontWeight: 100;
+    --baseFontWeight: 400;
+    --heaviestFontWeight: 700; 
 }
 
 html {
@@ -116,7 +128,7 @@ h4,
 h5,
 h6 {
     font-family: var(--titleFontFamily);
-    font-weight: bold;
+    font-weight: var(--heaviestFontWeight);
     line-height: var(--smallLineHeight);
     margin-bottom: calc(1.618vmin - 1vmax + .35em); /* increases margin as screen width gets smaller */
 }
@@ -157,7 +169,7 @@ dl {
 }
 
 li {
-    text-indent: -.9em;
+    text-indent: -.9em; /*this brings the left text aligned with the text of a <dd> element*/
     line-height: var(--baseLineHeight);
     padding: 0;
     margin: 0 0 0 var(--baseSpacingHorizontal);
@@ -232,7 +244,7 @@ cite {
 
 strong,
 b {
-    font-weight: 700;
+    font-weight: var(--heaviestFontWeight);
 }
 
 cite {
@@ -314,7 +326,7 @@ mark::selection {
 dfn,
 dt {
     font-style: oblique;
-    font-weight: 700;
+    font-weight: var(--heaviestFontWeight);
     text-transform: capitalize;
 }
 
@@ -487,7 +499,7 @@ th, td {
 
 th {
     font-family: var(--titleFontFamily);
-    font-weight: bold;
+    font-weight: var(--heaviestFontWeight);
     font-size: var(--smallTitleSize); /*treat th in a body as h4*/
 }
 
