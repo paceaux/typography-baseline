@@ -250,8 +250,8 @@ blockquote::before {
 em,
 i,
 cite {
+    font-style: var(--alternateFontVoice);
 }
-font-style: var(--alternateFontVoice);
 
 strong,
 b {
@@ -497,8 +497,8 @@ table {
 caption {
     font-size:  var(--baseTextSize);
     text-transform: capitalize;
+    font-style: var(--alternateFontVoice);
 }
-font-style: var(--alternateFontVoice);
 
 th, td {
     text-align: left;
