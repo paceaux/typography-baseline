@@ -86,7 +86,18 @@
 =====*/
     --lightestFontWeight: 100;
     --baseFontWeight: 400;
-    --heaviestFontWeight: 700; 
+    --heaviestFontWeight: 700;
+
+/*===== 
+    #font #style
+    Oblique will use the existing font and put the glyphs at an angle
+    Alternate will look for a font labelled with an italic face
+    If the font doesn't have a
+=====*/
+
+    --fontVoiceAlternate: italic;
+    --fontVoiceShifted: oblique 15deg;
+    --fontVoiceNormal: normal;
 }
 
 html {
@@ -239,7 +250,7 @@ blockquote::before {
 em,
 i,
 cite {
-    font-style: italic;
+    font-style: var(--fontVoiceAlternate);
 }
 
 strong,
@@ -253,8 +264,7 @@ cite {
 }
 
 u {
-    text-decoration: none;
-    border-bottom: 1px dotted red;
+    text-decoration: dotted underline red 1px;
 }
 
 small,
@@ -287,7 +297,7 @@ ins {
 s,
 strike,
 del {
-    text-decoration: strikethrough;
+    text-decoration: line-through;
 }
 
 ins,
@@ -325,7 +335,7 @@ mark::selection {
 /* dfn and dt both do the same thing: denote a term to be defined */
 dfn,
 dt {
-    font-style: oblique;
+    font-style: var(--fontVoiceShifted);
     font-weight: var(--heaviestFontWeight);
     text-transform: capitalize;
 }
@@ -364,7 +374,7 @@ data {
 
 var,
 data {
-    font-style: italic;
+    font-style: var(--fontVoiceAlternate);
 }
 
 samp {
@@ -487,7 +497,7 @@ table {
 caption {
     font-size:  var(--baseTextSize);
     text-transform: capitalize;
-    font-style: italic;
+    font-style: var(--fontVoiceAlternate);
 }
 
 th, td {
