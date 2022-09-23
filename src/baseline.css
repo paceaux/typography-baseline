@@ -92,12 +92,12 @@
     #font #style
     Oblique will use the existing font and put the glyphs at an angle
     Alternate will look for a font labelled with an italic face
-    If the font doesn't have a
+    If the browser doesn't have a labelled italic font, it synthesizes oblique
 =====*/
 
-    --fontVoiceAlternate: italic;
-    --fontVoiceShifted: oblique 15deg;
-    --fontVoiceNormal: normal;
+    --shiftedFontVoice: oblique 15deg;
+    --baseFontVoice: normal;
+    --alternateFontVoice: italic;
 }
 
 html {
@@ -250,8 +250,8 @@ blockquote::before {
 em,
 i,
 cite {
-    font-style: var(--fontVoiceAlternate);
 }
+font-style: var(--alternateFontVoice);
 
 strong,
 b {
@@ -335,7 +335,7 @@ mark::selection {
 /* dfn and dt both do the same thing: denote a term to be defined */
 dfn,
 dt {
-    font-style: var(--fontVoiceShifted);
+    font-style: var(--shiftedFontVoice);
     font-weight: var(--heaviestFontWeight);
     text-transform: capitalize;
 }
@@ -374,8 +374,8 @@ data {
 
 var,
 data {
-    font-style: var(--fontVoiceAlternate);
 }
+font-style: var(--alternateFontVoice);
 
 samp {
     border-left: 5px solid var(--baseInlineBorderColor);
@@ -497,8 +497,8 @@ table {
 caption {
     font-size:  var(--baseTextSize);
     text-transform: capitalize;
-    font-style: var(--fontVoiceAlternate);
 }
+font-style: var(--alternateFontVoice);
 
 th, td {
     text-align: left;
