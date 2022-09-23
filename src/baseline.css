@@ -28,6 +28,9 @@
     --baseLinkColorHover: var(--colorCoolDarker);
     --baseInlineBorderColor: var(--colorNeutralLight);
 
+    --baseTextLineColor: var(--baseTextColor);
+    --alertTextLineColor: rgb(255, 0, 0);
+
 /*===== 
     #LineHeight 
 =====*/
@@ -98,6 +101,17 @@
     --shiftedFontVoice: oblique 15deg;
     --baseFontVoice: normal;
     --alternateFontVoice: italic;
+
+/*===== 
+    #font #text #interactions
+    Interactions could/should include
+        idle: not being used, but an indicator that it can be
+        interest: a user has shown desire to interact (e.g. hover or focus)
+        active: a user is currently interacting
+=====*/
+    --idleTextLineStyle: dotted;
+    --activeTextLineStyle: solid;
+    --idleTextDecoration: var(--idleTextLineStyle) underline 2px;
 }
 
 html {
@@ -263,10 +277,6 @@ cite {
     text-align: right;
 }
 
-u {
-    text-decoration: dotted underline red 1px;
-}
-
 small,
 sub,
 sup {
@@ -309,6 +319,11 @@ ins {
     text-decoration: none;
 }
 
+/* U is for misspelled words. Invite user to make a correction */
+u {
+    text-decoration: var(--idleTextDecoration);
+    text-decoration-color: var(--alertTextLineColor);
+}
 
 /*
 mark and selection should be different, so user knows which one they've selected.
@@ -340,7 +355,15 @@ dt {
     text-transform: capitalize;
 }
 
+abbr {
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
+/* an abbreviation with a title should invite a user to hover over it*/
+abbr[title] {
+    text-decoration: var(--idleTextDecoration);
+}
 /*=====
 #Content-flow #Code
 =====*/
@@ -374,8 +397,8 @@ data {
 
 var,
 data {
+    font-style: var(--alternateFontVoice);
 }
-font-style: var(--alternateFontVoice);
 
 samp {
     border-left: 5px solid var(--baseInlineBorderColor);
@@ -470,7 +493,7 @@ rtc > bdo {
 a {
     color: var(--baseLinkColor);
     text-decoration: none;
-    border-bottom: 1px dotted transparent;
+    border-bottom: 1px var(--idleTextLineStyle) transparent;
     transition: all .3s ease-in-out;
 }
 
@@ -482,7 +505,7 @@ a:focus {
 }
 
 a:active {
-    border-style: solid;
+    border-style: var(--activeTextLineStyle);
 }
 
 
