@@ -26,6 +26,7 @@
     --baseTextLineColor: var(--baseTextColor);
     --alertTextLineColor: rgb(255, 0, 0);
 
+    --baseQuoteBackgroundColor: 165, 165, 165, ;
 /*===== 
     #LineHeight 
 =====*/
@@ -237,7 +238,7 @@ p {
     https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 */
 blockquote {
-    background: rgba(165, 165, 165, .15);
+    background: rgba(var(--baseQuoteBackgroundColor) 0.15);
     border-left: 10px solid var(--colorNeutralLighter);
     margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
@@ -309,7 +310,7 @@ del {
 
 ins,
 del {
-    background-color: rgba(220, 220, 220, .25);
+    background-color: rgba(220, 220, 220, 0.25);
 }
 
 ins {
@@ -323,25 +324,25 @@ u {
 }
 
 /*
-mark and selection should be different, so user knows which one they've selected.
-
-mark and selections:
-  saturation: 44%
-  lightness: 75%
-Hue is different
+mark and selection should be different so user knows which one they've selected.
 */
 
+/* hue: 120, saturation: 44%, lightness: 75%  */
 mark {
-    background-color: rgba(165, 220, 165, .9);
+    background-color: rgba(165, 220, 165, 0.9);
 }
 
+/*hue: 180, saturation: 44%, lightness: 75%*/
 ::selection {
-    background-color: rgba(165, 220, 220, .9);
+    background-color: rgba(165, 220, 220, 0.9);
 }
 
-/* Because mark and selection have same saturation, brightenss, mark won't easily stand out if it's selected */
+/* Because mark and selection have same saturation and brightenss, a selected <mark> won't stand out
+    A hue between 120 and 180 seems to stand out the best in all colorblind tests, too
+    hue: 150, saturation: 44%, lightness: 65%
+ */
 mark::selection {
-    background-color: rgba(165, 220, 110, .9);
+    background-color: rgba(126, 205, 166, 0.9);
 }
 
 /* dfn and dt both do the same thing: denote a term to be defined */
@@ -376,7 +377,7 @@ data {
 kbd,
 samp,
 data {
-    background-color: rgba(165, 165, 165, .2);
+    background-color: rgba(var(--baseQuoteBackgroundColor) 0.2);
 }
 
 kbd {
