@@ -101,6 +101,11 @@
     --alternateFontVoice: italic;
 
 /*===== 
+    #font #quotes
+=====*/
+    --baseTextQuotes: "\201C""\201D""\2018""\2019"; /*Primary open, primary close, secondary open, secondary close*/
+
+/*===== 
     #font #text #interactions
     Interactions could/should include
         idle: not being used, but an indicator that it can be
@@ -233,6 +238,15 @@ p {
     margin-bottom: var(--baseSpacingVertical);
 }
 
+blockquote,
+q {
+    quotes: var(--baseTextQuotes);
+}
+
+blockquote::before,
+q::before {
+    content: open-quote;
+}
 
 /* Credit where it's due:
     https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
@@ -242,18 +256,23 @@ blockquote {
     border-left: 10px solid var(--colorNeutralLighter);
     margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
-    quotes: "\201C""\201D""\2018""\2019";
 }
 
 blockquote::before {
     color: var(--colorNeutralLight);
-    content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
 }
 
+blockquote::after {
+    content: no-close-quote;
+}
+
+q::after {
+    content: close-quote;
+}
 
 /*=====
   #Content-Flow
