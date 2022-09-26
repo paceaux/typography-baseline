@@ -430,10 +430,6 @@ samp {
     border-left: var(--smallQuoteBorder);
 }
 
-data {
-    padding: 0 10px;
-}
-
 pre {
     font-size: var(--smallerTextSize);
     line-height: var(--smallLineHeight);
