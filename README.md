@@ -132,13 +132,71 @@ You may also notice that title sizes overlap with base text sizes. This is inten
     --smallestTitleSize: var(--bigTextSize);
 ```
 
-#### Font families
+#### Spacing
+Spacing is done with the golden ratio (.618 / 1.618)
+`rem` is used for horizontal spacing so that text remains aligned, regardless of size. `em` is used for vertical spacing so that bigger text gets more room to breathe. 
+You have two spacings to start with. 
+
+```
+    --bigSpacingHorizontal: 1.618rem;
+    --baseSpacingHorizontal: .618rem;
+
+    --bigSpacingVertical: 1.618em;
+    --baseSpacingVertical: .618em;
+```
+
+#### Font Modifications
+
+##### Font families
 You have three font families to choose from. `--baseFontFamily` is applied to the html element. 
 
 ```
     --baseFontFamily: Georgia, 'Times New Roman', serif;
     --titleFontFamily: Helvetica, Arial, sans-serif;
     --codeFontFamily: monospace;
+```
+
+##### Font Weights
+You have three font weights to choose from.
+
+```
+    --lightestFontWeight: 100;
+    --baseFontWeight: 400;
+    --heaviestFontWeight: 700;
+```
+
+ Even though a browser technically has nine font-weights, you can follow the pattern of adding "er" or "est" to add another four. Just make sure you've added those typefaces!
+
+ ```
+    --lightFontWeight: 300;
+    --lighterFontWeight: 200;
+    --heavyFontWeight: 500;
+    --heavierFontWeight: 600
+ ```
+
+##### Font Styles
+You have three font styles to use. These are called `fontVoice` because it's important for you to imagine how a person might read the text _out loud_. If you think someone might enunciate or pronounce it differently, that's "italic" (what you might use for `<em>` or `<i>`). The browser will actually look for an italic font. 
+
+If you just want to show slanted text, that's "oblique". The browser is just going to angle the font. 
+
+```
+    --shiftedFontVoice: oblique 15deg;
+    --baseFontVoice: normal;
+    --alternateFontVoice: italic;
+```
+
+#### Quote Styles
+One of the very few strong opinions in this baseline is the look and feel of a blockquote. However, you can set the  quotes that come before and after the `<blockquote>` and `<q>` elements. This is useful for internationalization; you have one place to make sure all quote symbols are updated!
+
+```
+    --baseTextQuotes: "\201C""\201D""\2018""\2019"; 
+```
+
+`<blockquote>` and `<samp>` both share a thick left "quote border":
+
+```
+    --baseQuoteBorder: 10px solid var(--colorNeutralLighter);
+    --smallQuoteBorder: 5px solid var(--colorNeutralLight);
 ```
 
 ## Conventions and Standards
