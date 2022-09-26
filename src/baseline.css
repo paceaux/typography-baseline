@@ -263,12 +263,16 @@ blockquote {
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
 }
 
-blockquote::before {
+blockquote::before,
+blockquote::after {
     color: var(--colorNeutralLight);
     font-size: 4em;
     line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
+    vertical-align: -0.5em;
+}
+
+blockquote::before {
+    margin-right: var(--baseSpacingHorizontal);
 }
 
 blockquote::after {
