@@ -101,9 +101,14 @@
     --alternateFontVoice: italic;
 
 /*===== 
-    #font #quotes
+    #font #quotes #border
+    These are the default quotes for English. Change these quotes-as needed for other languages
+    "secondary" quotes are nested quotes. e.g. <blockquote><blockquote>
+    the CSS properties 'open-quote', 'close-quote' will use the primary open and primary close quotes listed here
 =====*/
     --baseTextQuotes: "\201C""\201D""\2018""\2019"; /*Primary open, primary close, secondary open, secondary close*/
+    --baseQuoteBorder: 10px solid var(--colorNeutralLighter);
+    --smallQuoteBorder: 5px solid var(--colorNeutralLight);
 
 /*===== 
     #font #text #interactions
@@ -253,7 +258,7 @@ q::before {
 */
 blockquote {
     background: rgba(var(--baseQuoteBackgroundColor) 0.15);
-    border-left: 10px solid var(--colorNeutralLighter);
+    border-left: var(--baseQuoteBorder);
     margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
 }
@@ -418,7 +423,7 @@ data {
 }
 
 samp {
-    border-left: 5px solid var(--baseInlineBorderColor);
+    border-left: var(--smallQuoteBorder);
 }
 
 data {
