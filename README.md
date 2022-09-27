@@ -40,19 +40,25 @@ This is a fairly unopinionated approach to making sure that the text has a decen
 ## Usage
 While this is relatively unopinionated, there are a few "opinions" to consider:
 
-* `em` for for `font-size`
-* a unitless `line-height`
+* [`em` for for `font-size`](https://css-tricks.com/rems-ems/)
+* [a unitless `line-height`](https://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/)
 * `rem` for left/right spacing
-* text-spacing based on the golden ratio (.618 / 1.618)
+* [text-spacing based on the golden ratio ](https://pearsonified.com/golden-ratio-typography-intro/)(.618 / 1.618)
 
 ### Fitting it into a CSS architecture
-This would come after a reset / normalize and before you set baseline styles for forms or tables. If you're a fan of [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/), this is in the Elements layer.
+This would come after a reset / [normalize](https://necolas.github.io/normalize.css/) and before you set baseline styles for forms or tables. If you're a fan of [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/), this is in the Elements layer.
+
+If you were to load this into a [CSS Layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer), you would want it to come very early so that you could over ride it. 
+
+Whereever you place it, place it _early_ in the cascade so that other things can use and/or  re-declare the variables. 
 
 ### Modifying without Swearing or Heavy Drinking
 One of the really annoying things about other CSS frameworks (cough cough <small>Bootstrap</small>) is that you mostly have to write new CSS to overwrite the existing styles. Often that means raising specificity, which is really stinking annoying. This is designed to avoid that by using [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 
-The typography baseline sets all of the CSS variables on the `:root`. As CSS variables are subject to the cascade, you can override _any_ variable at any time by changing its value on the relevant selector. You can import this into your current CSS setup, and overwrite all the variables by setting new ones on the `html` element. 
+The typography baseline sets all of the CSS variables on the `:root`. As CSS variables are subject to the cascade, you can override _any_ variable at any time by changing its value &mdash; on the same selector *or* a more specific one.
+
+You can import this into your current CSS setup, and overwrite all the variables by setting new ones on the `html` element. 
 
 So if you want the `--baseLinkColor` to be different, you can write the following in your own stylesheet:
 
@@ -62,7 +68,7 @@ html {
 }
 ```
 
-No raising specificity. Just changing a variable. 
+**No raising specificity. Just changing a variable.**
 
 If you want to theme a special area of the site, or even a particular widget, it's just:
 
@@ -85,8 +91,10 @@ Colors are derivitives of a base value of 55. All of the neutral colors are mult
 ```
 Color-naming convention follows a pattern established [here](https://codepen.io/paceaux/pen/XdxQza). A big huge and heavy thanks to Sarah Braumiller for suggesting that convention years ago. 
 
+[The great big idea](https://blog.frankmtaylor.com/2021/10/21/a-small-guide-for-naming-stuff-in-front-end-code/#css-pre-processor-naming-scss-sass-less-stylus) is that these color name tells you a meaningful aspect of the value, not the value itself. That way it feels safer changing it. 
+
 #### Colors
-All of the colors variables are abstractions from the color palette. This is so you can change these colors without having to touch your neutral palette. 
+All of the color variables are abstractions from the color palette. This is so you can change these colors without having to touch your neutral palette. 
 
 ```
     --baseTextColor: var(--colorNeutralDarker);
@@ -131,6 +139,10 @@ You may also notice that title sizes overlap with base text sizes. This is inten
     --smallerTitleSize: var(--biggerTextSize);
     --smallestTitleSize: var(--bigTextSize);
 ```
+
+You may notice that all of the font-sizes are in `em`. This is _intentional_ so that your headlines can scale easily relative to the font-size of their containers. That means **you should be careful about how many times you change `font-size`**. 
+
+If you think you'll be changing `font-size` _a lot_, you may want to set these in `rem` instead, to avoid FOUC (Flash Of Unstyled Content). 
 
 #### Spacing
 Spacing is done with the golden ratio (.618 / 1.618)
@@ -205,7 +217,7 @@ One of the very few strong opinions in this baseline is the look and feel of a b
 The CSS follows the guidelines established [here](https://gist.github.com/paceaux/f31e278613ab29b74a412a7eb5046422).
 
 ### Naming Conventions
-CSS Variable names follow a convention established [here](https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming).
+CSS Variable names follow a convention established [here](https://blog.frankmtaylor.com/2021/10/21/a-small-guide-for-naming-stuff-in-front-end-code/).
 
 
 [license-image]: http://img.shields.io/npm/l/typography-baseline.css.svg
