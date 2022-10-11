@@ -188,7 +188,9 @@ You have three font weights to choose from.
     --heaviestFontWeight: 700;
 ```
 
- Even though a browser technically has nine font-weights, you can follow the pattern of adding "er" or "est" to add another four. Just make sure you've added those typefaces!
+ While the browser technically has nine font-weights, you're only able to add another four (for a total of seven) by following the pattern of adding "er" or "est". If you *really* need nine font-weights, consider naming the ones at the heavy end `--ultraHeavy` and `--ultraHeaviest`. 
+ 
+ *Just make sure you've added those typefaces!*
 
  ```
     --lightFontWeight: 300;
@@ -197,7 +199,7 @@ You have three font weights to choose from.
     --heavierFontWeight: 600
  ```
 
-Keep in mind that [the browser will synthesize the font weights unless font-families with those weights are provided to the browser](https://w3c.github.io/csswg-drafts/css-fonts-4/#missing-weights) &mdash; unless you are using a [variable font ](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#variable_fonts). Add more font-weights carefully. 
+If you add more font-weights, remember that [the browser will synthesize the font weights unless proper font-families with those weights are provided](https://w3c.github.io/csswg-drafts/css-fonts-4/#missing-weights)&mdash; unless you are using a [variable font ](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#variable_fonts). **Add more font-weights carefully**. 
 
 ##### Font Styles
 You have three font styles to use. These are called `fontVoice` because it's important for you to imagine how a person might read the text _out loud_. If you think someone might enunciate or pronounce it differently, that's "italic" (what you might use for `<em>` or `<i>`). The browser will actually look for an italic font. 
