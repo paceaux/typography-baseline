@@ -50,7 +50,18 @@ This would come after a reset / [normalize](https://necolas.github.io/normalize.
 
 If you were to load this into a [CSS Layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer), you would want it to come very early so that you could over ride it. 
 
-Whereever you place it, place it _early_ in the cascade so that other things can use and/or  re-declare the variables. 
+Wherever you place it, place it _early_ in the cascade so that other things can use and/or  re-declare the variables. 
+
+#### Using it in a project
+1. Add the baseline
+    - import into your project with NPM  `@import typography-baseline.css`
+    - <kbd>copy</kbd> + <kbd>paste</kbd> this project's `baseline.css`
+2. Add your own `typography.css` file that comes after the baseline, but before you style anything else.
+3. Add something like `html {}` or `body {}`.
+4. Modify the variables _in those rulesets_.
+5. Then add your own element styles. 
+
+**Don't modify the typography-baseline directly. Modify the variables it sets with new rulesets.**
 
 ### Modifying without Swearing or Heavy Drinking
 One of the really annoying things about other CSS frameworks (cough cough <small>Bootstrap</small>) is that you mostly have to write new CSS to overwrite the existing styles. Often that means raising specificity, which is really stinking annoying. This is designed to avoid that by using [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
@@ -80,7 +91,7 @@ If you want to theme a special area of the site, or even a particular widget, it
 
 
 #### Color Palette
-Colors are derivitives of a base value of 55. All of the neutral colors are multipliers of rgb(55,55,55). Even the non-neutral colors are close-ish to that. 
+Colors are derivatives of a base value of 55. All of the neutral colors are multipliers of rgb(55,55,55). Even the non-neutral colors are close-ish to that. 
 
 ```
     --colorNeutralDarker: rgb(55,55,55);                  /* base       */
@@ -185,6 +196,8 @@ You have three font weights to choose from.
     --heavyFontWeight: 500;
     --heavierFontWeight: 600
  ```
+
+Keep in mind that [the browser will synthesize the font weights unless font-families with those weights are provided to the browser](https://w3c.github.io/csswg-drafts/css-fonts-4/#missing-weights) &mdash; unless you are using a [variable font ](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#variable_fonts). Add more font-weights carefully. 
 
 ##### Font Styles
 You have three font styles to use. These are called `fontVoice` because it's important for you to imagine how a person might read the text _out loud_. If you think someone might enunciate or pronounce it differently, that's "italic" (what you might use for `<em>` or `<i>`). The browser will actually look for an italic font. 
