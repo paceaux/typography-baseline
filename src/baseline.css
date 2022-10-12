@@ -1,6 +1,6 @@
 :root {
 /*===== 
-    #Color #Palette 
+    #Color #Palette #Variables
     Variables follow convention found here: https://codepen.io/paceaux/pen/XdxQza
     Color is a dark, dark gray rgb (55, 55, 55). All grays and base line styles are multiples of this
     Using a "base value", all colors are a multiple of 55
@@ -14,7 +14,7 @@
     --colorCoolDarker: rgb(110,165,193);                    /* #6ea5c1;  hsl (200,40%,59%) */
 
 /*===== 
-    #Color #Link #Border 
+    #Color #Link #Border #Variables
     Variables follow convention found here: https://gist.github.com/paceaux/8638765e747f5bd6387b721cde99e066#sassscssstylus-naming
 =====*/
     --baseTextColor: var(--colorNeutralDarker);
@@ -27,14 +27,15 @@
     --alertTextLineColor: rgb(255, 0, 0);
 
     --baseQuoteBackgroundColor: 165, 165, 165, ;
+
 /*===== 
-    #LineHeight 
+    #LineHeight #Variables
 =====*/
     --baseLineHeight: 1.618;
     --smallLineHeight: 1.2;
 
 /*===== 
-    #Body #Size #Paragraph #content-flow
+    #Body #Size #Paragraph #content-flow #Variables
 =====*/
     --biggestTextSize:  1.3em;
     --biggerTextSize: 1.2em;
@@ -45,7 +46,7 @@
     --smallestTextSize: .618em;
 
 /*===== 
-    #Heading #Title #Size
+    #Heading #Title #Size #Variables
     The small title sizes use the big text sizes; so they overlap
     They're here, though, so that, if desired, we can deviate and not have them overlap
 =====*/
@@ -57,7 +58,7 @@
     --smallestTitleSize: var(--bigTextSize);
 
 /*===== 
-    #Spacing #Text #Size
+    #Spacing #Text #Size #Variables
     rem for left-right, for consistent alignment.
     em for top/bottom, so the spacing is relative to font-size  
 =====*/
@@ -67,9 +68,8 @@
     --bigSpacingVertical: 1.618em;
     --baseSpacingVertical: .618em;
 
-
 /*===== 
-    #Font #FontFamilies #Typeface #Code #Heading #Paragraphs ===
+    #Font #FontFamilies #Typeface #Code #Heading #Paragraphs #Variables
     base is meant to be what's applied to the majority of body copy
     title could also be called "headline", but would be  w/ other vars
 =====*/
@@ -78,7 +78,7 @@
     --codeFontFamily: monospace;
 
 /*===== 
-    #Font #Weight
+    #Font #Weight #Variables
     though font-weight ranges from 100 - 900, "normal" is 400 and the ends
          are a difference of 300 .
     So the "est" weights are the extremes, with room to add 
@@ -90,18 +90,17 @@
     --heaviestFontWeight: 700;
 
 /*===== 
-    #font #style
+    #font #style #Variables
     Oblique will use the existing font and put the glyphs at an angle
     Alternate will look for a font labelled with an italic face
     If the browser doesn't have a labelled italic font, it synthesizes oblique
 =====*/
-
     --shiftedFontVoice: oblique 15deg;
     --baseFontVoice: normal;
     --alternateFontVoice: italic;
 
 /*===== 
-    #font #quotes #border
+    #font #quotes #border #Variables
     These are the default quotes for English. Change these quotes-as needed for other languages
     "secondary" quotes are nested quotes. e.g. <blockquote><blockquote>
     the CSS properties 'open-quote', 'close-quote' will use the primary open and primary close quotes listed here
@@ -111,7 +110,7 @@
     --smallQuoteBorder: 5px solid var(--colorNeutralLight);
 
 /*===== 
-    #font #text #interactions
+    #font #text #interactions #Variables
     Interactions could/should include
         idle: not being used, but an indicator that it can be
         interest: a user has shown desire to interact (e.g. hover or focus)
@@ -291,6 +290,7 @@ q::after {
     content: close-quote;
 }
 
+
 /*=====
   #Content-Flow
 =====*/
@@ -398,6 +398,8 @@ abbr {
 abbr[title] {
     text-decoration: var(--idleTextDecoration);
 }
+
+
 /*=====
 #Content-flow #Code
 =====*/
