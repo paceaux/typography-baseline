@@ -103,6 +103,8 @@ Keep the CSS file as readable as possible by following these guidelines:
 * * Comment sections start with `*=====`
 * * Comment sections end with `=====*/`
 * * Comment sections "tag" the things the section addresses with a `#` following the subject. This is for searching in the codebase
+* * Comment sections within the `:root` have one blank line above and no blank lines below
+* * Comment sections for rulesets have two blank lines above, and one blank line below
 
 * Comments are short and to the point.
 * comments above a block reference the entire ruleset
