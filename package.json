@@ -1,6 +1,6 @@
 {
   "name": "typography-baseline.css",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A good start to your CSS typography that covers all the semantic nooks and crannies",
   "main": "src/baseline.css",
   "style": "src/baseline.css",
