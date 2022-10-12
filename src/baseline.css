@@ -197,7 +197,8 @@ h6 {
 
 ul,
 ol,
-dl {
+dl,
+menu {
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
 }
 
@@ -210,6 +211,13 @@ li {
 
 li {
     list-style-position: inside;
+}
+
+nav li,
+menu li {
+    text-indent: 0;
+    list-style-type: none;
+    margin: 0;
 }
 
 dt {
