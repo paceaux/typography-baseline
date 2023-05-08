@@ -50,7 +50,7 @@
     The small title sizes use the big text sizes; so they overlap
     They're here, though, so that, if desired, we can deviate and not have them overlap
 =====*/
-    --biggestTitleSize: 2.617924em; /* (16 x 1.618) x 1.618 */
+    --biggestTitleSize: 2.6179em; /* (16 x 1.618) x 1.618 */
     --bigTitleSize: 1.618em;
     --baseTitleSize: 1.5em;
     --smallTitleSize: var(--biggestTextSize);
@@ -202,14 +202,11 @@ menu {
 }
 
 li {
+    list-style-position: inside;
     text-indent: -.9em; /*this brings the left text aligned with the text of a <dd> element*/
     line-height: var(--baseLineHeight);
     padding: 0;
     margin: 0 0 0 var(--baseSpacingHorizontal);
-}
-
-li {
-    list-style-position: inside;
 }
 
 nav li,
