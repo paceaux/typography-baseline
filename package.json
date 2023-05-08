@@ -21,5 +21,13 @@
     "url": "https://github.com/paceaux/typography-baseline/issues"
   },
   "homepage": "https://github.com/paceaux/typography-baseline#readme",
-  "author": "Frank M. Taylor"
+  "author": "Frank M. Taylor",
+  "devDependencies": {
+    "stylelint": "^15.6.1",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-order": "^6.0.3"
+  },
+  "scripts": {
+    "test": "stylelint src/baseline.css"
+  }
 }
