@@ -73,8 +73,8 @@
     base is meant to be what's applied to the majority of body copy
     title could also be called "headline", but would be  w/ other vars
 =====*/
-    --baseFontFamily: Georgia, 'Times New Roman', serif;
-    --titleFontFamily: Helvetica, Arial, sans-serif;
+    --baseFontFamily: georgia, "Times New Roman", serif;
+    --titleFontFamily: helvetica, arial, sans-serif;
     --codeFontFamily: monospace;
 
 /*===== 
@@ -214,8 +214,8 @@ li {
 
 nav li,
 menu li {
-    text-indent: 0;
     list-style-type: none;
+    text-indent: 0;
     margin: 0;
 }
 
@@ -224,8 +224,8 @@ dt {
 }
 
 dd {
-    margin: 0;
     padding: 0 var(--baseSpacingHorizontal);
+    margin: 0;
 }
 
 
@@ -264,18 +264,18 @@ q::before {
     https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 */
 blockquote {
-    background: rgba(var(--baseQuoteBackgroundColor) 0.15);
-    border-left: var(--baseQuoteBorder);
-    margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
+    border-left: var(--baseQuoteBorder);
+    background: rgba(var(--baseQuoteBackgroundColor) 0.15);
+    margin: var(--bigSpacingVertical) var(--baseSpacingHorizontal);
 }
 
 blockquote::before,
 blockquote::after {
     color: var(--colorNeutralLight);
+    vertical-align: -0.5em;
     font-size: 4em;
     line-height: 0.1em;
-    vertical-align: -0.5em;
 }
 
 blockquote::before {
@@ -384,8 +384,8 @@ mark::selection {
 /* dfn and dt both do the same thing: denote a term to be defined */
 dfn,
 dt {
-    font-style: var(--shiftedFontVoice);
     font-weight: var(--heaviestFontWeight);
+    font-style: var(--shiftedFontVoice);
     text-transform: capitalize;
 }
 
@@ -441,12 +441,12 @@ samp {
 }
 
 pre {
+    overflow: scroll;
     font-size: var(--smallerTextSize);
     line-height: var(--smallLineHeight);
     padding: var(--baseSpacingVertical) var(--baseSpacingHorizontal);
     border: 1px solid var(--baseInlineBorderColor);
     border-radius: 2px;
-    overflow: scroll;
 }
 
 
@@ -455,8 +455,8 @@ pre {
 =====*/
 
 ruby {
-    display: ruby;
     position: relative;
+    display: ruby;
     margin:0 .5ex;
     -webkit-ruby-position: before;
     ruby-position: over;
@@ -484,9 +484,9 @@ rtc > bdo {
 }
 
 /*complex ruby for chrome and Edge*/
+
 /*only FF has "complete" ruby support*/
 @supports (ruby-align: left) or ( not (display:ruby-base-container))  {
-
     ruby {
         display:inline-flex;
         flex-direction: column;
@@ -507,7 +507,6 @@ rtc > bdo {
 
 /*Edge fixes*/
 @supports  ((ruby-align: left)) {
-
     rtc {
         justify-content: space-between;
     }
@@ -550,9 +549,9 @@ table {
 }
 
 caption {
-    font-size:  var(--baseTextSize);
-    text-transform: capitalize;
     font-style: var(--alternateFontVoice);
+    text-transform: capitalize;
+    font-size:  var(--baseTextSize);
 }
 
 th, td {
