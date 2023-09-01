@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A baseline for semantic HTML and typography">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Typography Baseline</title>
 	<link rel="stylesheet" href="src/baseline.css">
 </head>
 <body>
+<main>
 <section>
   <h1>Semantics and Typography</h1>
   <h2>An Introduction </h2>
@@ -23,7 +25,6 @@
   <h6>The Heading for pedants</h6>
 </section>
 <hr />
-<section>
   <h3>Paragraphs and Styles</h3>
   <h4>Text Level Semantics</h4>
   <p>I'm that paragraph with some <em>emphasis on the text-level semantics</em> where I might feel the need to <strong>share some strong opinions</strong>. This paragraph even uses elements that should have been deprecated, but instead the W3C redefined
@@ -102,11 +103,13 @@
   <p>Another way to understand that text is to look at the word-for-word translation: <ruby><rbc><rb>Shalom</rb><rb> in the home</rb></rbc><rtc lang="iw"><rt><bdi>שלום</bdi></rt><rt><bdi>בבית</bdi></rt></rtc></ruby></p>
 
   <hr />
-  <address>
-  <h4>Who should you contact about this?</h4>
-  <p><a href="http://twitter.com/paceaux">Paceaux</a>
-  </p>
-</address>
 </section>
+</main>
+<footer>
+  <h2>Who should you contact about this?</h2>
+  <address>
+    <p>Frank M. Taylor (aka <a href="https://twitter.com/paceaux" target="_blank" rel="noopener">@paceaux</a>)</p>
+  </address>
+</footer>
 </body>
 </html>
