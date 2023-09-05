@@ -2,16 +2,21 @@
 /*===== 
     #Color #Palette #Variables
     Variables follow convention found here: https://codepen.io/paceaux/pen/XdxQza
-    Color is a dark, dark gray rgb (55, 55, 55). All grays and base line styles are multiples of this
-    Using a "base value", all colors are a multiple of 55
+    Color is a very dark gray:  rgb (31, 31, 31). Grays are multiples of 31. 
+    The NeutralDarker gray passes WCAGAA for contrast against a light background
 =====*/
-    --colorNeutralDarker: rgb(55,55,55);                    /*base:           #373737;    hsl(22%, 22%, 22%) */
-    --colorNeutralDark: rgb(110,110,110);                   /*  base * 2:  #6e6e6e;      hsl(0, 0%, 43%) */
-    --colorNeutral: rgb(165,165,165);                       /* base * 3:   #a5a5a5;      hsl(0, 0%, 65%) */
-    --colorNeutralLight: rgb(192.5,192.5,192.5);            /*base * 3.5: #c1c1c1;      hsl(0, 0%, 75%) */
-    --colorNeutralLighter: rgb(220,220,220);                /*  base * 4:    #dcdcdc;       hsl(0, 0%, 86%) */
-    --colorCool: rgb(110,165,220);                          /*   #6ea5dc; hsl(210, 61%, 65%);  */
-    --colorCoolDarker: rgb(110,165,193);                    /* #6ea5c1;  hsl (200,40%,59%) */
+    --colorNeutralDarker: rgb(31, 31, 31);              /* #1f1f1f; hsl(0%, 0%, 12%) */
+    --colorNeutralDark: rgb(62, 62, 62);                /* #5d5d5d; hsl(0, 0%, 36%) */
+    --colorNeutral: rgb(155, 155, 155);                 /* #9b9b9b; hsl(0, 0%, 61%) */
+    --colorNeutralLight: rgb(186, 186, 186);            /* #bababa; hsl(0, 0%, 73%) */
+    --colorNeutralLighter: rgb(217, 217, 217);          /* #d9d9d9; hsl(0, 0%, 85%) */
+
+    /*
+     These colors pass WCAG 2.1 for contrast against a light background and the NeutralDarker gray
+     Before you change them, check your contrast ratios:  https://webaim.org/resources/linkcontrastchecker/
+    */
+    --colorCool: rgb(47, 120, 193);                          /*   #2f78c1; hsl(210, 61%, 47%);  */
+    --colorCoolDarker: rgb(41, 105, 168);                    /*  #2a6bac;  hsl(210, 61%, 41%) */
 
 /*===== 
     #Color #Link #Border #Variables
@@ -26,7 +31,7 @@
     --baseTextLineColor: var(--baseTextColor);
     --alertTextLineColor: rgb(255, 0, 0);
 
-    --baseQuoteBackgroundColor: 165, 165, 165, ;
+    --baseQuoteBackgroundColor: 155, 155, 155, ; /* Same as colorNeutral*/
 
 /*===== 
     #LineHeight #Variables
@@ -117,6 +122,7 @@
         active: a user is currently interacting
 =====*/
     --idleTextLineStyle: dotted;
+    --interestTextLineStyle: solid;
     --activeTextLineStyle: solid;
     --idleTextDecoration: var(--idleTextLineStyle) underline 2px;
 }
@@ -269,7 +275,7 @@ blockquote {
 
 blockquote::before,
 blockquote::after {
-    color: var(--colorNeutralLight);
+    color: var(--colorNeutralDark); /* Any lighter and it won't pass WCAG AA */
     vertical-align: -0.5em;
     font-size: 4em;
     line-height: 0.1em;
@@ -343,7 +349,7 @@ del {
 
 ins,
 del {
-    background-color: rgba(220, 220, 220, 0.25);
+    background-color: rgba(217, 217, 217, 0.25);
 }
 
 ins {
@@ -360,17 +366,17 @@ u {
 mark and selection should be different so user knows which one they've selected.
 */
 
-/* hue: 120, saturation: 44%, lightness: 75%  */
+/* hue: 120, saturation: 45%, lightness: 73%  */
 mark {
-    background-color: rgba(165, 220, 165, 0.9);
+    background-color: rgba(155, 217, 155, 0.9);
 }
 
-/*hue: 180, saturation: 44%, lightness: 75%*/
+/*hue: 180, saturation: 45%, lightness: 73%*/
 ::selection {
-    background-color: rgba(165, 220, 220, 0.9);
+    background-color: rgba(155, 217, 217, 0.9);
 }
 
-/* Because mark and selection have same saturation and brightenss, a selected <mark> won't stand out
+/* Because mark and selection have same saturation and brightness, a selected <mark> won't stand out
     A hue between 120 and 180 seems to stand out the best in all colorblind tests, too
     hue: 150, saturation: 44%, lightness: 65%
  */
@@ -521,19 +527,19 @@ rtc > bdo {
 a {
     color: var(--baseLinkColor);
     text-decoration: none;
-    border-bottom: 1px var(--idleTextLineStyle) transparent;
+    border-bottom: 1px var(--idleTextLineStyle);
     transition: all .3s ease-in-out;
 }
 
 a:hover,
 a:focus {
     color: var(--baseLinkColorHover);
-    border-color: var(--baseLinkColorHover);
+    border-bottom-style: var(--interestTextLineStyle);
     outline: none;
 }
 
 a:active {
-    border-style: var(--activeTextLineStyle);
+    border-bottom-style: var(--activeTextLineStyle);
 }
 
 
